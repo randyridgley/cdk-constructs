@@ -20,7 +20,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   ],
   releaseToNpm: true,
   npmDistTag: 'latest',
-  npmRegistryUrl: 'https://npm.pkg.github.com',
+  // npmRegistryUrl: 'https://npm.pkg.github.com',
   npmAccess: NpmAccess.PUBLIC,
   releaseToNpm: true,
 
