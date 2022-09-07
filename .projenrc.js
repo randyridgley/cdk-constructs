@@ -1,5 +1,5 @@
-const { NpmAccess } = require('projen/lib/javascript');
 const { awscdk } = require('projen');
+const { NpmAccess } = require('projen/lib/javascript');
 const project = new awscdk.AwsCdkConstructLibrary({
   cdkVersion: '2.1.0',
   defaultReleaseBranch: 'main',
@@ -10,10 +10,14 @@ const project = new awscdk.AwsCdkConstructLibrary({
   packageName: '@randyridgley/cdk-constructs',
 
   deps: [
-    '@aws-cdk/aws-glue-alpha',
-    'cdk-nag@2.18.2'
+    'aws-cdk-lib@2.40.0',
+    '@aws-cdk/aws-glue-alpha@2.40.0-alpha.0',
+    'constructs@10.1.94',
+    'cdk-nag@2.18.2',
   ],
-
+  peerDeps: [
+    '@aws-cdk/aws-glue-alpha@2.40.0-alpha.0',
+  ],
   releaseToNpm: true,
   npmDistTag: 'latest',
   npmRegistryUrl: 'https://npm.pkg.github.com',

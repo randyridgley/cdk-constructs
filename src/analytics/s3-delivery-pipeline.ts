@@ -12,17 +12,17 @@ import { NagSuppressions } from 'cdk-nag';
 import { Construct } from 'constructs';
 
 export interface DeliveryPipelineProps {
-  deliveryStreamName: string;
-  kmsKey: Key;
-  bucket: Bucket;
-  database: Database;
-  baseTableName: string;
-  processedColumns: Array<CfnTable.ColumnProperty>;
-  processedPartitions?: Array<CfnTable.ColumnProperty>;
-  rawColumns: Array<CfnTable.ColumnProperty>;
-  rawPartitions?: Array<CfnTable.ColumnProperty>;
-  timestampColumn: string;
-  stream?: Stream;
+  readonly deliveryStreamName: string;
+  readonly kmsKey: Key;
+  readonly bucket: Bucket;
+  readonly database: Database;
+  readonly baseTableName: string;
+  readonly processedColumns: Array<CfnTable.ColumnProperty>;
+  readonly processedPartitions?: Array<CfnTable.ColumnProperty>;
+  readonly rawColumns: Array<CfnTable.ColumnProperty>;
+  readonly rawPartitions?: Array<CfnTable.ColumnProperty>;
+  readonly timestampColumn: string;
+  readonly stream?: Stream;
 }
 
 export class S3DeliveryPipeline extends Construct {
@@ -162,7 +162,7 @@ export class S3DeliveryPipeline extends Construct {
             'kms:EncryptionContext:aws:logs:arn': Stack.of(this).formatArn({
               service: 'logs',
               resource: 'log-group',
-              resourceName: `/aws-glue/crawlers-role/ConnectedProductsPipeline*`,
+              resourceName: '/aws-glue/crawlers-role/ConnectedProductsPipeline*',
               arnFormat: ArnFormat.COLON_RESOURCE_NAME,
             }),
           },
