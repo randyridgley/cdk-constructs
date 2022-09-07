@@ -1,5 +1,6 @@
 {
-  "name": "cdk-constructs",
+  "name": "@randyridgley/cdk-constructs",
+  "description": "High-level constructs.",
   "repository": {
     "type": "git",
     "url": "https://github.com/randyridgley/cdk-constructs.git"
@@ -30,8 +31,7 @@
     "projen": "npx projen"
   },
   "author": {
-    "name": "Randy Ridgley",
-    "email": "rridgley@amazon.com",
+    "name": "randy.ridgley@gmail.com",
     "organization": false
   },
   "devDependencies": {
@@ -62,11 +62,19 @@
     "aws-cdk-lib": "^2.1.0",
     "constructs": "^10.0.5"
   },
+  "dependencies": {
+    "@aws-cdk/aws-glue-alpha": "^2.40.0-alpha.0",
+    "cdk-nag": "2.18.2"
+  },
   "keywords": [
     "cdk"
   ],
   "main": "lib/index.js",
   "license": "Apache-2.0",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "access": "public"
+  },
   "version": "0.0.0",
   "jest": {
     "testMatch": [
